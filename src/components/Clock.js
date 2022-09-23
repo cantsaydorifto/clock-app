@@ -6,7 +6,7 @@ const Clock = () => {
     const presentDate = new Date();
     let sec = presentDate.getSeconds() / 60;
     let min = (sec + presentDate.getMinutes()) / 60;
-    let hr = (min + presentDate.getHours()) / 60;
+    let hr = (min + presentDate.getHours()) / 12;
 
     const [ratios, setRatios] = useState({
         secondRatio: sec,
@@ -19,7 +19,7 @@ const Clock = () => {
             const presentDate = new Date();
             let secondRatio = presentDate.getSeconds() / 60;
             let minuteRatio = (secondRatio + presentDate.getMinutes()) / 60;
-            let hourRatio = (minuteRatio + presentDate.getHours()) / 60;
+            let hourRatio = (minuteRatio + presentDate.getHours()) / 12;
             setRatios({ hourRatio, minuteRatio, secondRatio });
         }, 1000);
     }, []);
